@@ -1,4 +1,4 @@
-##CICD Pipeline with RPG
+##ILE CiCd Pipeline with Gitlab
 
 This will be the first of a series of blog posts about using GITLAB to build a full CICD pipeline for building, testing, linting, and deploying RPG code.
 
