@@ -2,7 +2,7 @@
 
 This will be the first of a series of blog posts about using GITLAB to build a full CICD pipeline for building, testing, linting, and deploying RPG code.
 
-![CiCd pipeline](/assets/images/cicd_cropperd.png)
+![CiCd pipeline](/assets/images/cicd_cropped.png)
 
 ### What is CiCd?
 The Ci in CiCd stands for Continuous Integration.  This usually means integrating automated tools into your build and test process.  Emphasis on the word 'automated'.  No lever pulling or button pushing.
