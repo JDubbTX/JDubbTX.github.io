@@ -19,7 +19,7 @@ CALL QSYS2.SET_PASE_SHELL_INFO('*CURRENT', '/QOpenSys/pkgs/bin/bash')
    Go to the [Visual Studio Code download page] and install it on your machine.  Once installed, it will notify you when there are updates and prompt you to update it, quite seamlessly.   It usually only takes a few seconds.
 2. Install extensions to VSCODE
    There are a multitude of extensions available for VSCODE.  They are available to install in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/VSCode), or you can access the same marketplace from within the VSCODE in the extensions sidebar view:
-   ![Install IBM i Development Pack](../assets/images/InstallIBMiDevelopmentPack.jpg)
+   ![Install IBM i Development Pack](/assets/images/InstallIBMiDevelopmentPack.jpg)
 
    Here are the essential ones we will need.
    *  [IBM i Development Pack](https://marketplace.visualstudio.com/items?itemName=HalcyonTechLtd.ibm-i-development-pack) This will install 13 extesions, all helpfull for developming on IBM i, including the Code for IBM i extension.
