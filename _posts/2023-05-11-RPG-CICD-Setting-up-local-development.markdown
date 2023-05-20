@@ -12,7 +12,7 @@ You need to have a home directory on your development IBM i partition.  It doesn
 ![Please, not more greenscreen!](/assets/images/CRTDIR.png)
 
 ### Set default shell to Bash
-IF you haven't done it yet, follow instructions in [this link](https://ibmi-oss-docs.readthedocs.io/en/latest/troubleshooting/SETTING_BASH.html) to set Bash as your default shell.  For historical reasons, IBM i has ksh (kornshell) as the default shell.  Most folks prefer Bash. Most open source examples you find on the web use Bash.  The absolute easiest way to do it is to run the following command in ACS Run SQL Scripts tool:
+If you haven't done it yet, follow instructions in [this link](https://ibmi-oss-docs.readthedocs.io/en/latest/troubleshooting/SETTING_BASH.html) to set Bash as your default shell.  For historical reasons, IBM i has ksh (kornshell) as the default shell.  Most folks prefer Bash. Most open source examples you find on the web use Bash.  The absolute easiest way to do it is to run the following command in ACS Run SQL Scripts tool:
 
 ```SQL
 CALL QSYS2.SET_PASE_SHELL_INFO('*CURRENT', '/QOpenSys/pkgs/bin/bash')
