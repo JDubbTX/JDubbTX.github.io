@@ -25,11 +25,13 @@ CALL QSYS2.SET_PASE_SHELL_INFO('*CURRENT', '/QOpenSys/pkgs/bin/bash')
    There are a multitude of extensions available for VSCODE.  They are available to install in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/VSCode), or you can access the same marketplace from within the VSCODE in the extensions sidebar view:
    ![Install IBM i Development Pack](/assets/images/InstallIBMiDevelopmentPack.jpg)
 
-   Here are the essential ones we will need.
+   Here are the most essential ones.
    *  [IBM i Development Pack](https://marketplace.visualstudio.com/items?itemName=HalcyonTechLtd.ibm-i-development-pack) This will install 13 extesions, all helpfull for developming on IBM i, including the Code for IBM i extension.
    *  [GitLense](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) This gives you full visibility to your git repository, both locally and remote.
 3. Log in to your IBM i with the Code for IBM i extension.
-4. etc. (WIP)
+4. [Configure your Settings](/_posts/2023-05-18-VSCODE-Settings-for-IBM-i-development.markdown)
+5. Set your deploy IFS target directory
+6. Set up your 
 
 ### Setting up your IBM i profile
 The first work we need to do is to set up your IBM i profile for open source development
