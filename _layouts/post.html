@@ -24,7 +24,15 @@ layout: default
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
     {% include navlinks.html %}
+    <script src="https://utteranc.es/client.js"
+            repo="JDubbTX/JDubbTX.github.io"
+            issue-term="pathname"
+            theme="github-dark-orange"
+            crossorigin="anonymous"
+    async>
+    </script>
   </div>
+
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
