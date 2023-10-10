@@ -41,6 +41,23 @@ VSCODE automatically prompts you to download and install it the first time you c
 
 ![Install GIT](/assets/images/VSCODE_Install_GIT_2.gif)
 
+#### Configure Git
+
+The first time you use Git, you must configure some settings.  Open up a bash terminal in VSCODE and run the following 2 commands:
+
+    ```
+    git config --global user.name "xx xxxx"
+    git config --global user.email "xx.xxxx@mail.com"
+    ```
+    ![Configure GIT](/assets/images/Git_Config.gif)
+
+    These settings will be used to identify you on every commit you make.
+
+#### Set up SSH keys in Gitlab
+We need to generate an SSH key pair on your local PC, then enter the public key in your gitlab profile.  This allows easy, secure ability to push and pull content from your PC to Gitlab.  All of the following instructions are pretty much the same if you use another SCM like Github instead of Gitlab.
+
+1.  
+
 #### Install VSCODE extensions
 
 There are a multitude of extensions available for VSCODE.  They are available to install in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/VSCode), or you can access the same marketplace from within the VSCODE in the extensions sidebar view:
@@ -67,7 +84,6 @@ There are two approaches to getting a project to sync to online source control. 
 2. Copy the project SSH clone URL and clone it
 
 5. Set your deploy IFS target directory - do this in the IFS 
-6. Set up your 
 
 ### Setting up your IBM i profile
 The first work we need to do is to set up your IBM i profile for open source development

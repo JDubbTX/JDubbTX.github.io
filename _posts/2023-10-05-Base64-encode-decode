@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "Base 64 Encoding and Decoding with DB2"
+date:   2023-10-05
+---
+
+## Base 64 encoding and decoding with DB2
+
+>Base64 encoding is a method for converting binary data into ASCII text. It's designed to prevent communication errors when transferring binary information.
+
+IBM i provides some DB2 services that allow you to BASE64 encode and decode.
+
+In this post we will discuss how to use these DB2 services, and how CCSID is an important consideration.  The examples given will utilize embedded SQL in an SQLRPGLE program.
+
+### The IBM i DB2 services
+The two services are:
+
+[BASE64_ENCODE](https://www.ibm.com/docs/en/i/7.5?topic=functions-base64-encode) - returns the Base64 encoded version of a binary value.
+
+[BASE64_DECODE](https://www.ibm.com/docs/en/i/7.5?topic=functions-base64-decode) -  returns a character string that has been Base64 decoded
+
+### Trying it out
+
+First lets encode a string 'Encode This' in base64 using a simple SQLRPGLE program.
+
+```
+**free
+Dcl-S PlainText VARCHAR(100) INZ('MyText');
+Dcl-S EncodedText VARCHAR(100);
+Dcl-S Message VARCHAR(100); 
+
+Exec SQL Values QSYS2.BASE64_ENCODE(:PlainText) Into :EncodedText;
+Message = 'EncodedText = ' + %trim(EncodedText);
+snd-msg *INFO Message %TARGET(*SELF);
+return;
+```
+Resulting joblog message:
+
+>    EncodedText = 1Kjjhaej
+
+Now, lets check that against a base64 encoder on the web: https://www.base64encode.org/
+
+![bas64encode.org screen grab](/assets/images/base64-1.png)
+
+Hmm, if you notice, the encoded value from our RPG program doesn't match the encoded value from www.base64encode.org.  The reason they don't match, is because we forgot something in our RPG code.
+
+If you read the documentation for base64_encode, it gives examples of both EBCDIC and UTF-8 base64 encoding.  If you want to encode like the rest of the world, and you probably do,
+you need to make some adjustments to your code:
+
+```
+**free
+Dcl-S PlainText VARCHAR(100) INZ('MyText') CCSID(1208);
+Dcl-S EncodedText VARCHAR(100);
+Dcl-S Message VARCHAR(100); 
+
+Exec SQL 
+Values QSYS2.BASE64_ENCODE(PlainText) Into :EncodedText;
+Message = 'EncodedText = ' + %trim(EncodedText);
+snd-msg *INFO Message %TARGET(*SELF);
+return;
+```
+
+Above, the only modification needed was to add the CCSID keyword to the definition for **PlainText**.  The documentation suggests another method, which is to CAST the CCSID inline:
+
+```
+VALUES QSYS2.BASE64_ENCODE (CAST(EncodedText AS VARCHAR(10) CCSID 1208)) Into :EncodedText;
+```
+
+### And Now to Decode
+
+Lets add a few more lines to our example that decode the now encoded message.
+
+
+
+
+
+
+### Why is CCSID important
+
+In order to encode and decode on IBM i the same way as the rest of the world, the Coded Character Set ID must be specified in your code.
+
+For example, If I take the text `Encode This` and drop it into any of the base64 encode/decode websites, it will come up with an encoded value of `RW5jb2RlIFRoaXM=`
+
