@@ -10,7 +10,7 @@ Base64 encoding is a method for converting binary data into ASCII text. It's des
 
 The IBM i operating system provides two DB2 services that allow you to BASE64 encode and decode.
 
-In this post we will discuss how to use these DB2 services, and why CCSID is an important consideration.  The examples given will utilize embedded SQL in an SQLRPGLE program.  We will make use of a service program exported procedure named 'print_this' that will be discussed in future post about service programs.
+In this post we will discuss how to use these DB2 services, and why CCSID is an important consideration.  The examples given will utilize embedded SQL in an SQLRPGLE program.  We will make use of a service program exported procedure named 'print_this' that will be discussed in future post about service programs.  All code examples are freely available in my [IBMiExamples project on github](https://github.com/JDubbTX/IBMiExamples).
 
 ### The IBM i DB2 services for base64 encoding and decoding
 
@@ -61,7 +61,7 @@ Now, lets check that against a base64 encoder on the web: [https://www.base64enc
 
 The encoded value from our RPG program doesn't match the encoded value from www.base64encode.org.  The reason they don't match, is because of CCSID.  CCSID, or Coded Character Set Identitifier, is what uniquely identifies the specific encoding of a code page.
 
-If you read the documentation for base64_encode, it gives examples of base64 encodeing for both the system default EBCDIC code page and UTF-8 (code page 1208) CCSID.  ON IBM i, the default character set is EBCDIC, with the specific code page varying by region.
+If you read the documentation for base64_encode, it gives examples of base64 encodeing for both the system default EBCDIC code page and UTF-8 (code page 1208).  On IBM i, the default character set is EBCDIC, with the specific code page varying by region.
 
 > On IBM i, ebcdic is the default character set.
 
@@ -160,4 +160,6 @@ TranslatedTextVarChar MyText
 In the code above, we first define a field of type `sqltype(VARBINARY:100)` to recieve the decoded text.  We define another field of type `VARCHAR(100) CCSID(1208)` which allows us to translate the binary ebcdic data back to UTF-8 text.  Unfortunately I haven't found a way to do this in one step.  If you know of a better way, please mention it in the comments below.
 
 In summary, while care must be given when defining fields with the correct CCSID values and field types, the IBM i operating system does give us the features we need to encode and decode in base64 just like the rest of the world.
+
+Code used in this blog post is available in my GITHUB, [here](https://github.com/JDubbTX/IBMiExamples/blob/main/QRPGLESRC/BASE64TST.SQLRPGLE).
 
