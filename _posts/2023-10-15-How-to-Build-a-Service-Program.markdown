@@ -222,7 +222,7 @@ At the time of this writing, code for IBM i doesn't provide an action to create 
 
 ## Summary
 
-The above steps hopefully will aid you in creating modern, reusable procedures in your code.  By using binder language when we create our service program, we greatly increase the serviceability of our service program.
+The above steps hopefully will aid you in creating modern, reusable procedures in your code.  By using binder language when we create our service program, we greatly increase the serviceability of our service program.  Do you have other stand practices when creating service programs?  If so, please mention them in the comments below.
 
 In the next post I will talk about using binding directories to make our job of program creation easier.
 
