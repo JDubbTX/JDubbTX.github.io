@@ -15,7 +15,8 @@
 		"vscode": {
 			"extensions": [
 				"eamodio.gitlens",
-				"Dedsec727.jekyll-run"
+				"Dedsec727.jekyll-run",
+				"streetsidesoftware.code-spell-checker"
 			]
 		}
 

@@ -1,0 +1,29 @@
+version: "0.2"
+ignorePaths: []
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - ACTGRP
+  - CRTRPGMOD
+  - CRTSRVPGM
+  - CURLIB
+  - ENDPGMEXP
+  - ILEDOCS
+  - jweirich
+  - PGMLVL
+  - PRINTTHIS
+  - QPRINT
+  - QPRPGLESRC
+  - QSRVSRC
+  - RELATIVEPATH
+  - RPGINC
+  - SRCSTMF
+  - SRVPGM
+  - STRPGMEXP
+ignoreWords:
+  - QPTYPESRC
+  - RPGLEINC
+  - varchar
+  - RPGLE
+  - srcstmt
+import: []
