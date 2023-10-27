@@ -99,7 +99,8 @@ end-proc;
 
 All RPGLE examples in this blog will be in fully free-form RPGLE.  By putting `**FREE` on line 1 of our source file, the rpgle compiler allows us to start our code in column 1, instead of column 7.
 
-Then a few of control specifications:
+Then a few control specifications:
+
   1. `NoMain` - there is no main procedure in this module
   2. `option(*srcstmt)` - statement numbers for the listing are generated from the source ID and line sequence numbers.
   3. `ReqPrExp(*require)` - a prototype definition is required for all exported procedures.  While this is keyword is optional, by including it we ensure that we don't forget to add a prototype definition to our prototype file - the module will not compile unless we do.
