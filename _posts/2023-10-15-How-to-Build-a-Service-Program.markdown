@@ -15,9 +15,10 @@ ILE, or the Integrated Language Environment, is a feature of the IBM i operating
 ## Service program building blocks
 
 To build a service program, 3 things are needed
-2) A Prototype
-2) A module
-3) Binder Language
+
+1. A Prototype
+2. A Module
+3. Binder Language
 
 From those 3 items we can create a service program that can be bound into other programs.
 
@@ -99,9 +100,9 @@ end-proc;
 All RPGLE examples in this blog will be in fully free-form RPGLE.  By putting `**FREE` on line 1 of our source file, the rpgle compiler allows us to start our code in column 1, instead of column 7.
 
 Then a few of control specifications:
-  1) `NoMain` - there is no main procedure in this module
-  2) `option(*srcstmt)` - statement numbers for the listing are generated from the source ID and line sequence numbers.
-  3) `ReqPrExp(*require)` - a prototype definition is required for all exported procedures.  While this is keyword is optional, by including it we ensure that we don't forget to add a prototype definition to our prototype file - the module will not compile unless we do.
+  1. `NoMain` - there is no main procedure in this module
+  2. `option(*srcstmt)` - statement numbers for the listing are generated from the source ID and line sequence numbers.
+  3. `ReqPrExp(*require)` - a prototype definition is required for all exported procedures.  While this is keyword is optional, by including it we ensure that we don't forget to add a prototype definition to our prototype file - the module will not compile unless we do.
 
 Finally, we use `/copy` with a relative path to the prototype file in order to make prototyped procedures and field definitions available to this module.
 
