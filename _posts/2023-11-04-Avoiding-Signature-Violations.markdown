@@ -69,6 +69,6 @@ SELECT a.*
   and bound_service_program_library != 'QSYS'
   ;
 ```
-
+## Putting it all together
 ## Catching signature violations ahead of time
 
